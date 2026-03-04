@@ -16,9 +16,9 @@ public class BinaryTree{
         }
 
         if (numero < root.getNumero()) {
-            root.hijoD = insertarRecorrido(root.getHijoD(), numero);
-        } else if (numero > root.numero) {
             root.hijoI = insertarRecorrido(root.getHijoI(), numero);
+        } else if (numero > root.numero) {
+            root.hijoD = insertarRecorrido(root.getHijoD(), numero);
         }
 
         return root;
@@ -39,9 +39,9 @@ public class BinaryTree{
         }
 
         if (numero < root.getNumero()){
-            return buscarRecorrido(root.getHijoD(),numero);
-        } else{
             return buscarRecorrido(root.getHijoI(),numero);
+        } else{
+            return buscarRecorrido(root.getHijoD(),numero);
         }
     }
 
@@ -50,9 +50,9 @@ public class BinaryTree{
     }
     private void RecorridoEntreOrder(Nodo raiz){
         if (raiz !=null){
-            RecorridoEntreOrder(raiz.getHijoD());
-            System.out.println(raiz.getNumero()+" ");
             RecorridoEntreOrder(raiz.getHijoI());
+            System.out.println(raiz.getNumero()+" ");
+            RecorridoEntreOrder(raiz.getHijoD());
 
         }
     }
@@ -64,8 +64,8 @@ public class BinaryTree{
     private void RecorridoPreOrder(Nodo raiz) {
         if (raiz != null) {
             System.out.print(raiz.getNumero() + " ");
-            RecorridoPreOrder(raiz.getHijoD());
             RecorridoPreOrder(raiz.getHijoI());
+            RecorridoPreOrder(raiz.getHijoD());
         }
     }
 
@@ -75,9 +75,10 @@ public class BinaryTree{
 
     private void RecorridoPostOrder(Nodo raiz) {
         if (raiz != null) {
-            RecorridoPostOrder(raiz.getHijoD());
             RecorridoPostOrder(raiz.getHijoI());
+            RecorridoPostOrder(raiz.getHijoD());
             System.out.print(raiz.getNumero() + " ");
         }
     }
 }
+

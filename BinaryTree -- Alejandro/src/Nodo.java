@@ -1,12 +1,12 @@
 public class Nodo {
     int numero;
-    Nodo hijoD;
     Nodo hijoI;
+    Nodo hijoD;
 
     public Nodo(int  numero){
         this.numero =numero;
-        this.hijoD=null;
         this.hijoI=null;
+        this.hijoD=null;
     }
 
     public int getNumero() {
@@ -17,14 +17,6 @@ public class Nodo {
         this.numero = numero;
     }
 
-    public Nodo getHijoD() {
-        return hijoD;
-    }
-
-    public void setHijoD(Nodo hijoD) {
-        this.hijoD = hijoD;
-    }
-
     public Nodo getHijoI() {
         return hijoI;
     }
@@ -32,4 +24,13 @@ public class Nodo {
     public void setHijoI(Nodo hijoI) {
         this.hijoI = hijoI;
     }
+
+    public Nodo getHijoD() {
+        return hijoD;
+    }
+
+    public void setHijoD(Nodo hijoD) {
+        this.hijoD = hijoD;
+    }
 }
+
